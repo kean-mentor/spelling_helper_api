@@ -67,4 +67,4 @@ def add_word():
 @bp.route('/word/<int:word_id>/delete')
 def delete_word(word_id):
     requests.delete(_url('/words/' + str(word_id)))
-    return redirect(url_for('list_words'))
+    return redirect(url_for('.list_words'))
