@@ -1,0 +1,27 @@
+{% extends "base_template.html" %}
+
+{% block body_block %}
+    <h1>Questions</h1>
+
+    <form action="{{ url_for('.result') }}" method="post">
+        {% for idx, q in (data.questions) %}
+            <p>{{ q }}<p>
+            {% if '_' in q %}
+                <p>Select the correct  spellling<p>
+                <input type="radio" id="j" name={{ idx }} value="j" required/>
+                <label for="j">j</label>
+                <input type="radio" id="ly" name={{ idx }} value="ly" required/>
+                <label for="ly">ly</label>
+            {% else %}
+                <p>Is the spelling correct?<p>
+                <input type="radio" id="yes" name={{ idx }} value="yes" required/>
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name={{ idx }} value="no" required/>
+                <label for="no">No</label>
+            {% endif %}
+        {% endfor %}
+        <br>
+        <br>
+        <input type="submit" value="Finish"/>
+    </form>
+{% endblock %}

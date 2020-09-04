@@ -1,0 +1,12 @@
+{% extends "base_template.html" %}
+
+{% block body_block %}
+    <h1>Welcome to Hungarian Spelling Helper</h1>
+    <form action="{{ url_for('.quiz') }}" method="POST">
+        <p>Enter your name: <input type="text" name="username" maxlength=100 required/></p>
+        <p>How many words do you want: <input type="number" name="total" min=1 max=20 required/></p>
+        <p><input type="submit" value="Start quiz"/></p>
+    </form>
+
+    <a href="{{ url_for('.list_words') }}">Manage word list</a>
+{% endblock %}

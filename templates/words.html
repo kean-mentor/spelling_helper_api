@@ -1,0 +1,12 @@
+{% extends "base_template.html" %}
+
+{% block body_block %}
+    <h1>List of words</h1>
+    <a href="{{ url_for('.index') }}">Start quiz</a><br>
+    <a href="{{ url_for('.add_word') }}">Add new word</a><br>
+    <ol>
+    {% for word in data %}
+        <li>{{ word.value }}<a href="{{ url_for('.delete_word', word_id=word.word_id) }}"> Delete</a></li>
+    {% endfor %}
+    </ol>
+{% endblock %}

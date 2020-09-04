@@ -1,0 +1,7 @@
+{% extends "base_template.html" %}
+
+{% block body_block %}
+    <h1>Congratulations {{ data["name"] }}!</h1>
+    <h3>Your score is: {{ data["score"] }} point(s)</h3>
+    <p><a href="{{ url_for('.index') }}">Click here to restart</a></p>
+{% endblock %}
